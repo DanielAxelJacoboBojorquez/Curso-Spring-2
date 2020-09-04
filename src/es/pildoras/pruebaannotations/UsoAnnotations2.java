@@ -12,9 +12,14 @@ public class UsoAnnotations2 {
 		// 1.- Leer el class de configuración
 		AnnotationConfigApplicationContext contexto=new AnnotationConfigApplicationContext(EmpleadosConfig.class);
 		// 2.- Pedir un bean al contenedor
-		Empleados empleado=contexto.getBean("directorFinanciero", Empleados.class);
+		DirectorFinanciero empleado=contexto.getBean("directorFinanciero", DirectorFinanciero.class);
+		System.out.println("Email del director: " + empleado.getEmail());
+		System.out.println("Nombre de la empresa: " + empleado.getNombreEmpresa());
+		
+		/*Empleados empleado=contexto.getBean("directorFinanciero", Empleados.class);
 		System.out.println(empleado.getTareas());
-		System.out.println(empleado.getInforme());
+		System.out.println(empleado.getInforme());*/
+		
 		/*Empleados Antonio=contexto.getBean("comercialExperimentado", Empleados.class);
 		Empleados Lucia=contexto.getBean("comercialExperimentado", Empleados.class);		
 		//Apuntan al mismo objeto en memoria?
